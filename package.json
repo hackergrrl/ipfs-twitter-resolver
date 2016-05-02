@@ -1,7 +1,7 @@
 {
   "name": "ipfs-twitter-resolver",
   "description": "tiny server to resolve and redirect /twitter/user/key addresses to IPFS hashes",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "bin": {
     "ipfs-twitter-resolver": "index.js"
   },
