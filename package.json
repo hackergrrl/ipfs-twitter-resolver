@@ -10,6 +10,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "minimist": "^1.2.0",
     "twitter-kv": "0.0.3"
   }
 }
