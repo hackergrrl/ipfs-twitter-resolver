@@ -1,30 +1,18 @@
 var kv = require('twitter-kv')
-var qs = require('query-string')
+var http = require('http')
 
-var params = qs.parse(location.search)
+http.createServer(function (req, res) {
+  var addr = req.url.split('/')
+  if (addr.length !== 4) return res.end('malform addr')
+  if (addr[0] !== '') return res.end('malformed addr')
+  if (addr[1] !== 'twitter') return res.end('malformed addr')
 
-if (!params.key) {
-  document.write('need to specify "key" as a url param')
-  document.write('<br><br>')
-  document.write('e.g. ?key=/twitter/noffle/blog')
-  return
-}
+  kv(addr[2], addr[3], function (err, value) {
+    if (err) return res.end(err)
+    if (!value) { res.statusCode = 404; return res.end() }
 
-var addr = params.key.split('/')
-if (addr.length !== 4) return document.write('malform addr')
-if (addr[0] !== '') return document.write('malformed addr')
-if (addr[1] !== 'twitter') return document.write('malformed addr')
+    res.writeHead(302, { 'Location': 'https://ipfs.io/' + value })
+    res.end()
+  })
+}).listen(8000)
 
-document.write('Loading...<br><br>')
-
-kv(addr[2], addr[3], function (err, value) {
-  if (err) return document.write('err', err)
-  document.write('<a href=https://ipfs.io' + value + '>' + value + '</a>')
-  document.write('<br><br>redirecting..')
-
-  // TODO: validate that value is an /ipfs or /ipns multiaddr
-
-  setTimeout(function () {
-    window.location = 'https://ipfs.io' + value
-  }, 1700)
-})
