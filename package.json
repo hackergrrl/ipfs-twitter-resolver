@@ -1,19 +1,15 @@
 {
   "name": "ipfs-twitter-resolver",
-  "description": "resolves /twitter/user/key addresses to a value using twitter timelines",
+  "description": "tiny server to resolve and redirect /twitter/user/key addresses to IPFS hashes",
   "version": "0.0.0",
+  "bin": {
+    "ipfs-twitter-resolver": "index.js"
+  },
   "repository": {
     "url": "git://github.com/noffle/ipfs-twitter-resolver.git"
   },
   "main": "index.js",
-  "scripts": {
-    "build": "echo \"<script>$(browserify index.js)</script>\""
-  },
   "dependencies": {
-    "query-string": "^4.1.0",
     "twitter-kv": "0.0.3"
-  },
-  "devDependencies": {
-    "browserify": "^13.0.0"
   }
 }

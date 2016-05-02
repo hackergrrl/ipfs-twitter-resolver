@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var kv = require('twitter-kv')
 var http = require('http')
 
