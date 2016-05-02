@@ -1,6 +1,6 @@
 # ipfs-twitter-resolver
 
-> tiny CLI server for resolving `/twitter/user/key` pathes to [IPFS][] addresses
+> tiny CLI server for resolving `/twitter/user/key` to an [IPFS][] address
 
 ## background
 
