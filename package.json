@@ -7,13 +7,13 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "build": "echo \"<script>$(browserify index.js)</script>\""
   },
   "dependencies": {
     "query-string": "^4.1.0",
     "twitter-kv": "0.0.2"
   },
   "devDependencies": {
-    "tape": "*"
+    "browserify": "^13.0.0"
   }
 }
