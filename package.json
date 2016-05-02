@@ -1,0 +1,18 @@
+{
+  "name": "ipfs-twitter-resolver",
+  "description": "resolves /twitter/user/key addresses to a value using twitter timelines",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/ipfs-twitter-resolver.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {
+    "twitter-kv": "0.0.2"
+  },
+  "devDependencies": {
+    "tape": "*"
+  }
+}
