@@ -30,7 +30,7 @@ $ ipfs-twitter-resolver &
 $ curl -L http://localhost:8000/twitter/noffle/avatar
 ...
 < HTTP/1.1 302 Found
-< Location: https://ipfs.io//ipfs/QmdXZsi5GvsnKewXK35DypLxTzseR8tuVGyBLMQcBpEmMc/avatar.png
+< Location: https://ipfs.io/ipfs/QmdXZsi5GvsnKewXK35DypLxTzseR8tuVGyBLMQcBpEmMc/avatar.png
 <
 ```
 

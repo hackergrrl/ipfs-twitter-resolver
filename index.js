@@ -22,7 +22,7 @@ http.createServer(function (req, res) {
     if (err) return res.end(err)
     if (!value) { res.statusCode = 404; return res.end() }
 
-    res.writeHead(302, { 'Location': 'https://ipfs.io/' + value })
+    res.writeHead(302, { 'Location': 'https://ipfs.io' + value })
     res.end()
   })
 }).listen(port, function ready () {
